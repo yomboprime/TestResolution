@@ -1,0 +1,30 @@
+<html lang="en">
+	<head>
+		<title>Test resolution</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				margin: 0;
+				background-color: #303030;
+			}
+		</style>
+		<script type="module">
+			const label = document.createElement( 'span' );
+			label.innerHTML = "Resolution: " + window.innerWidth + " X " + window.innerHeight;
+			label.style.position = "absolute";
+			label.style.top = "50px";
+			label.style.left = "50px";
+			label.style.color = 'white';
+			document.body.appendChild( label );
+			window.addEventListener( 'resize', onWindowResize, false );
+			function onWindowResize() {
+				console.log( "X RES: " + window.innerWidth + " Y RES: " + window.innerHeight );
+				label.innerHTML = "Resolution: " + window.innerWidth + " X " + window.innerHeight;
+			}
+		</script>
+		<input type="file" id="theInputFiles" style="display:none">
+	</head>
+<body>
+</body>
+</html>
